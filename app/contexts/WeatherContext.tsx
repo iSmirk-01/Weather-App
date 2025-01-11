@@ -106,7 +106,7 @@ export const WeatherProvider: React.FC<{ children: React.ReactNode }> = ({
   ) => {
     try {
       const response = await fetch(
-        `http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${lat},${lon}&days=4&aqi=no&alerts=no`
+        `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${lat},${lon}&days=4&aqi=no&alerts=no`
       );
       const data = await response.json();
       setWeather(data);
