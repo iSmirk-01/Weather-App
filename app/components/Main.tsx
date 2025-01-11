@@ -9,6 +9,7 @@ import { FaCalendarDays } from "react-icons/fa6";
 import { FaCloudRain } from "react-icons/fa";
 import timeConverter from "../functions/timeConverter";
 import TempIcon from "./TempIcon";
+import Image from "next/image";
 
 function Main() {
   const {
@@ -22,7 +23,7 @@ function Main() {
   const searchRef = useRef<HTMLInputElement>(null);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [isFah, setIsFah] = useState(true);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   
   // Close suggestions on outside click
   useEffect(() => {
@@ -131,8 +132,7 @@ function Main() {
             <ul className="flex flex-col items-center">
               <h1 className="font-bold text-2xl pb-10">Todays weather</h1>
               <li>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   width={50}
                   height={80}
                   src={`${weather?.current.condition.icon}`}
@@ -205,8 +205,7 @@ function Main() {
                   }
                 >
                   <div className="flex flex-col">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                    <Image
                       src={hour.condition.icon}
                       alt="Condition icon"
                       width={50}
@@ -275,8 +274,7 @@ function Main() {
                     key={index}
                     className="flex flex-col items-center p-4 w-full border border-gray-500"
                   >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                    <Image
                       src={day.day.condition.icon}
                       alt="Condition icon"
                       width={50}
