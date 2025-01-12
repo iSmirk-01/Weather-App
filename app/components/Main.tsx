@@ -135,7 +135,7 @@ function Main() {
                 <Image
                   width={50}
                   height={80}
-                  src={`${weather?.current.condition.icon}`}
+                  src={`https:${weather?.current.condition.icon}`}
                   alt="Weather Icon"
                 />
               </li>
@@ -206,7 +206,7 @@ function Main() {
                 >
                   <div className="flex flex-col">
                     <Image
-                      src={hour.condition.icon}
+                      src={`https:${hour.condition.icon}`}
                       alt="Condition icon"
                       width={50}
                       height={80}
@@ -275,7 +275,7 @@ function Main() {
                     className="flex flex-col items-center p-4 w-full border border-gray-500"
                   >
                     <Image
-                      src={day.day.condition.icon}
+                      src={`https:${day.day.condition.icon}`}
                       alt="Condition icon"
                       width={50}
                       height={80}
