@@ -97,7 +97,7 @@ export const WeatherProvider: React.FC<{ children: React.ReactNode }> = ({
   const [weather, setWeather] = useState<WeatherData>(null);
   const [suggestions, setSuggestions] = useState<Suggestions[]>([]);
   const [next8HoursData, setNext8HourData] = useState<HourlyWeather[] | []>([]);
-  const key = process.env.NEXT_PUBLIC_API_KEY;
+  const key = process.env.KEY;
 
   // fetch weather by suggestions and default to new_york
   const fetchWeather = async (
