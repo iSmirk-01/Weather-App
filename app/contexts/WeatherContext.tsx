@@ -97,7 +97,7 @@ export const WeatherProvider: React.FC<{ children: React.ReactNode }> = ({
   const [weather, setWeather] = useState<WeatherData>(null);
   const [suggestions, setSuggestions] = useState<Suggestions[]>([]);
   const [next8HoursData, setNext8HourData] = useState<HourlyWeather[] | []>([]);
-  const key = process.env.KEY;
+  const key = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
 
   // fetch weather by suggestions and default to new_york
   const fetchWeather = async (
@@ -108,7 +108,9 @@ export const WeatherProvider: React.FC<{ children: React.ReactNode }> = ({
       const response = await fetch(
         `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${lat},${lon}&days=4&aqi=no&alerts=no`
       );
+      console.log(key)
       const data = await response.json();
+      console.log(data)
       setWeather(data);
     } catch (error) {
       console.error("Error fetching weather:", error);
