@@ -108,9 +108,9 @@ export const WeatherProvider: React.FC<{ children: React.ReactNode }> = ({
       const response = await fetch(
         `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${lat},${lon}&days=4&aqi=no&alerts=no`
       );
-      console.log(key)
+
       const data = await response.json();
-      console.log(data)
+
       setWeather(data);
     } catch (error) {
       console.error("Error fetching weather:", error);
